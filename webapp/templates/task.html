@@ -6,6 +6,7 @@ Database
 
 {% block content %}
 <div class="container">
+    <h5>List of tasks</h5>
     <table class="table table-sm">
         <thead>
             <th scope="col" class="text-center">ID</th>
@@ -28,16 +29,15 @@ Database
             {% endfor %}
         </tbody>
     </table>
+    <h5>Log of scheduled tasks</h5>
     <table class="table table-sm">
         <thead>
             <th scope="col" class="text-center">Message</th>
-            <th scope="col" class="text-center">Timestamp</th>
         </thead>
         <tbody>
             {% for log in context.logs %}
             <tr>
-                <td class="text-center">{{ log.message }}</td>
-                <td class="text-center">{{ log.timestamp }}</td>
+                <td>{{ log.message }}</td>
             </tr>
             {% endfor %}
         </tbody>

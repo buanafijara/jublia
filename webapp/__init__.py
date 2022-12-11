@@ -19,7 +19,7 @@ def create_app():
 
     app.register_blueprint(views, url_prefix='/')
 
-    from .models import Email, Event, Task
+    from .models import Transaction, Event, Task
     create_database(app)
 
     return app
@@ -35,11 +35,11 @@ def send_email(emails, email_subject, email_content, timestamp):
     # send emails to the given address with the given details via SMTP service
     
     # track the execution by logging
-    printLog(f'email sent to {emails} at {timestamp}')
+    printLog(f'{email_subject} - sent to {emails} at {timestamp}')
 
 def printLog(content):
     now = datetime.now()
-    filename = 'task.json'
+    filename = 'log.json'
     output = {
         'message': content
     }

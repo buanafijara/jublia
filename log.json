@@ -1,14 +1,14 @@
 [
     {
-        "timestamp": "",
         "message": ""
     },
     {
-        "timestamp": "2022-12-11 09:51",
-        "message": "email sent at 2022-12-11 17:51:00"
+        "message": "email sent to ['buanafijara@gmail.com', 'adjie@gmail.com', 'tony@gmail.com'] at 2022-12-11 22:54:00"
     },
     {
-        "timestamp": "2022-12-11 10:37",
-        "message": "email sent to ['w', 'q'] at 2022-12-11 18:37:00"
+        "message": "Payment Confirmation - sent to ['buanafijara@gmail.com', 'adjie@gmail.com', 'tony@gmail.com'] at 2022-12-11 22:56:00"
+    },
+    {
+        "message": "RSVP - sent to ['buanafijara@gmail.com', 'adjie@gmail.com', 'tony@gmail.com'] at 2022-12-11 23:29:00"
     }
 ]

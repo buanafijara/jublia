@@ -1,14 +1,14 @@
 from . import db
 
-email_event = db.Table('email_event',
-    db.Column('email_id', db.Integer, db.ForeignKey('email.id')),
+transaction_event = db.Table('transaction_event',
+    db.Column('transaction_id', db.Integer, db.ForeignKey('transaction.id')),
     db.Column('event_id', db.Integer, db.ForeignKey('event.id'))
     )
 
-class Email(db.Model):
+class Transaction(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150))
-    followed_events = db.relationship('Event', secondary=email_event, backref=db.backref('participants', lazy='dynamic'))
+    followed_events = db.relationship('Event', secondary=transaction_event, backref=db.backref('participants', lazy='dynamic'))
 
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
