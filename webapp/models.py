@@ -21,4 +21,3 @@ class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     task = db.relationship('Task', backref='event')
-

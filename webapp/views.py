@@ -18,6 +18,8 @@ def save_emails():
         email_subject = request.form['email_subject']
         email_content = request.form['email_content']
         timestamp = datetime.strptime(request.form['timestamp'], '%Y-%m-%d %H:%M')
+
+        # add instance to database
         event0 = Task(event_id=event_id, 
                     email_subject=email_subject,
                     email_content=email_content,
@@ -26,10 +28,13 @@ def save_emails():
         db.session.add(event0)
         db.session.commit()
 
+        # get registered emails for the event
         emails_q = Email.query.join(Event.participants).filter(Event.id==event_id).all()
         emails = [email.email for email in emails_q]
 
+        # schedule a job to send the emails
         scheduler.add_job(send_email, 'date', run_date=timestamp, args=[emails, email_subject, email_content, timestamp])
+        
     return render_template('save_emails.html')
 
 @views.route('/event_list', methods=['GET', 'POST'])

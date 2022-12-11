@@ -51,8 +51,3 @@ def printLog(content):
 
     with open(filename, 'w') as f:
         json.dump(listObj, f, indent=4, separators=(',',': '))
-    # msg = f'{now} --- {content}'
-    # with open('/home/project/fms/print.txt', 'r') as original: 
-    #     data = original.read()
-    # with open('/home/project/fms/print.txt', 'w') as modified: 
-    #     modified.write(msg + "\n" + data)
