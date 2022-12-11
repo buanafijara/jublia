@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, jsonify
 from .models import Event, Email, Task
 from . import db, scheduler, send_email
 from datetime import datetime
@@ -34,6 +34,12 @@ def save_emails():
 
         # schedule a job to send the emails
         scheduler.add_job(send_email, 'date', run_date=timestamp, args=[emails, email_subject, email_content, timestamp])
+
+        result = {
+            'status': 200,
+            'message': 'Task have been scheduled and will be executed accordingly.'
+        }
+        return jsonify(result)
         
     return render_template('save_emails.html')
 
