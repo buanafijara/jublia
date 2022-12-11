@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+Event List
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="POST">
+        <div class="row">
+            <div class="col">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" name="email" id="email" class="form-control">
+            </div>
+            <div class="col">
+                <label for="event_id" class="form-label">Event ID</label>
+                <input type="text" name="event_id" id="event_id" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                <input type="submit" value="submit">
+            </div>
+        </div>
+    </form>
+    <table class="table table-sm">
+        <thead>
+            <th scope="col" class="text-center">ID</th>
+            <th scope="col" class="text-center">Email</th>
+            <th scope="col" class="text-center">Event</th>
+        </thead>
+        <tbody>
+            {% for email in emails %}
+            <tr>
+                <td class="text-center">{{ email.id }}</td>
+                <td class="text-center">{{ email.email }}</td>
+                <td class="text-center">{{ email.followed_events }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

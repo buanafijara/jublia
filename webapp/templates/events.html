@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Event List
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="POST">
+        <div class="row">
+            <div class="col">
+                <label for="name" class="form-label">Event Name</label>
+                <input type="text" name="name" id="name" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                <input type="submit" value="submit">
+            </div>
+        </div>
+    </form>
+    <table class="table table-sm">
+        <thead>
+            <th scope="col" class="text-center">Event ID</th>
+            <th scope="col" class="text-center">Event Name</th>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+                <td class="text-center">{{ event.id }}</td>
+                <td class="text-center">{{ event.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

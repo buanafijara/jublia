@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+Save Email
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {{ params }}
+    <div class="col-sm-4">
+        <form action="" method="post">
+        <div class="mb-3">
+            <label for="event_id" class="form-label">Event ID</label>
+            <input type="text" name="event_id" id="event_id" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="email_subject" class="form-label">Email Subject</label>
+            <input type="text" name="email_subject" id="email_subject" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="email_content" class="form-label">Event Content</label>
+            <textarea name="email_content" id="email_content" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="timestamp" class="form-label">Timestamp</label>
+            <input type="text" name="timestamp" id="timestamp" class="form-control">
+            <div class="form-text">Timestamp format : YYYY-MM-DD HH:MM</div>
+        </div>
+        <input type="submit" value="submit">
+        </form>
+    </div>
+</div>
+{% endblock %}

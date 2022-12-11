@@ -1,0 +1,14 @@
+[
+    {
+        "timestamp": "",
+        "message": ""
+    },
+    {
+        "timestamp": "2022-12-11 09:51",
+        "message": "email sent at 2022-12-11 17:51:00"
+    },
+    {
+        "timestamp": "2022-12-11 10:37",
+        "message": "email sent to ['w', 'q'] at 2022-12-11 18:37:00"
+    }
+]

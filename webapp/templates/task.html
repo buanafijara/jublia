@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Database
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-sm">
+        <thead>
+            <th scope="col" class="text-center">ID</th>
+            <th scope="col" class="text-center">Event ID</th>
+            <th scope="col" class="text-center">Email Subject</th>
+            <th scope="col" class="text-center">Email Content</th>
+            <th scope="col" class="text-center">Timestamp</th>
+            <th scope="col" class="text-center">Participants</th>
+        </thead>
+        <tbody>
+            {% for task in context.tasks %}
+            <tr>
+                <td class="text-center">{{ task.id }}</td>
+                <td class="text-center">{{ task.event_id }}</td>
+                <td class="text-center">{{ task.email_subject }}</td>
+                <td class="text-center">{{ task.email_content }}</td>
+                <td class="text-center">{{ task.timestamp }}</td>
+                <td class="text-center">{{ task.participants }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table class="table table-sm">
+        <thead>
+            <th scope="col" class="text-center">Message</th>
+            <th scope="col" class="text-center">Timestamp</th>
+        </thead>
+        <tbody>
+            {% for log in context.logs %}
+            <tr>
+                <td class="text-center">{{ log.message }}</td>
+                <td class="text-center">{{ log.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
